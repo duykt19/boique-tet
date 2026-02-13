@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bốc Quẻ 2026</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    background: radial-gradient(circle at top, #ff4d4d, #8B0000);
+    color: gold;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: rgba(0,0,0,0.4);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px gold;
+    width: 90%;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 38px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px gold;
+}
+
+button {
+    padding: 15px 35px;
+    font-size: 20px;
+    border: none;
+    border-radius: 50px;
+    background: gold;
+    color: #8B0000;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 20px gold;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: white;
+}
+
+.result {
+    margin-top: 30px;
+    font-size: 24px;
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 15px;
+    min-height: 80px;
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🎉 BỐC QUẺ NĂM 2026 🎉</h1>
+    <button onclick="startAll()">Xem Tôi Sẽ Đạt Được Gì?</button>
+    <div class="result" id="resultBox">
+        Nhấn nút để xem vận may của bạn ✨
+    </div>
+</div>
+
+<!-- NHẠC -->
+<audio id="bgMusic" loop>
+    <source src="kk.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const results = [
+    "💍 Bạn sẽ tìm được một nửa phù hợp!",
+    "🚗 Bạn sẽ mua được xe mới!",
+    "💰 Tiền vào như nước!",
+    "🏡 Có tin vui về nhà cửa!",
+    "✈️ Du lịch nước ngoài!",
+    "🌟 Thăng chức lớn!",
+    "🔥 Bứt phá mạnh mẽ!",
+    "💎 Quẻ SIÊU MAY MẮN – 2026 là năm của bạn!"
+];
+
+let musicStarted = false;
+
+function startAll() {
+    randomResult();
+
+    if (!musicStarted) {
+        document.getElementById("bgMusic").play();
+        musicStarted = true;
+    }
+}
+
+function randomResult() {
+    const randomIndex = Math.floor(Math.random() * results.length);
+    document.getElementById("resultBox").innerHTML = results[randomIndex];
+}
+</script>
+
+</body>
+</html>
